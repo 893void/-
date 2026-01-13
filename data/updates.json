@@ -1,0 +1,19 @@
+{
+    "updates": [
+        {
+            "date": "2026-01-13",
+            "content": "ビルドシステムを導入しました。",
+            "link": null
+        },
+        {
+            "date": "2026-01-11",
+            "content": "電気設備技術基準ページを更新しました。",
+            "link": "standards/index.html"
+        },
+        {
+            "date": "2026-01-11",
+            "content": "保護継電器ページを追加しました。",
+            "link": "relay/index.html"
+        }
+    ]
+}

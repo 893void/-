@@ -1,0 +1,109 @@
+{
+    "terms": [
+        {
+            "word": "過電流継電器",
+            "reading": "かでんりゅうけいでんき",
+            "abbreviation": "OCR",
+            "link": "relay/ocr.html",
+            "summary": "電路に過電流が流れたときに動作する保護継電器"
+        },
+        {
+            "word": "OCR",
+            "reading": null,
+            "abbreviation": null,
+            "link": "relay/ocr.html",
+            "summary": "過電流継電器（Over Current Relay）の略称"
+        },
+        {
+            "word": "地絡継電器",
+            "reading": "ちらくけいでんき",
+            "abbreviation": "GR",
+            "link": "relay/gr.html",
+            "summary": "地絡事故を検出して動作する保護継電器"
+        },
+        {
+            "word": "GR",
+            "reading": null,
+            "abbreviation": null,
+            "link": "relay/gr.html",
+            "summary": "地絡継電器（Ground Relay）の略称"
+        },
+        {
+            "word": "方向性地絡継電器",
+            "reading": "ほうこうせいちらくけいでんき",
+            "abbreviation": "DGR",
+            "link": "relay/dgr.html",
+            "summary": "地絡電流の方向を判別して動作する保護継電器"
+        },
+        {
+            "word": "DGR",
+            "reading": null,
+            "abbreviation": null,
+            "link": "relay/dgr.html",
+            "summary": "方向性地絡継電器（Directional Ground Relay）の略称"
+        },
+        {
+            "word": "地絡過電圧継電器",
+            "reading": "ちらくかでんあつけいでんき",
+            "abbreviation": "OVGR",
+            "link": "relay/ovgr.html",
+            "summary": "零相電圧を検出して動作する保護継電器"
+        },
+        {
+            "word": "OVGR",
+            "reading": null,
+            "abbreviation": null,
+            "link": "relay/ovgr.html",
+            "summary": "地絡過電圧継電器（Over Voltage Ground Relay）の略称"
+        },
+        {
+            "word": "不足電圧継電器",
+            "reading": "ふそくでんあつけいでんき",
+            "abbreviation": "UVR",
+            "link": "relay/uvr.html",
+            "summary": "電圧が設定値以下になったときに動作する保護継電器"
+        },
+        {
+            "word": "UVR",
+            "reading": null,
+            "abbreviation": null,
+            "link": "relay/uvr.html",
+            "summary": "不足電圧継電器（Under Voltage Relay）の略称"
+        },
+        {
+            "word": "電気設備技術基準",
+            "reading": "でんきせつびぎじゅつきじゅん",
+            "abbreviation": "電技",
+            "link": "standards/index.html",
+            "summary": "電気設備の技術的要件を定めた経済産業省令"
+        },
+        {
+            "word": "電技",
+            "reading": "でんぎ",
+            "abbreviation": null,
+            "link": "standards/index.html",
+            "summary": "電気設備技術基準の略称"
+        },
+        {
+            "word": "保護継電器",
+            "reading": "ほごけいでんき",
+            "abbreviation": null,
+            "link": "relay/basic.html",
+            "summary": "電力系統の事故を検出し、遮断器に信号を送る装置"
+        },
+        {
+            "word": "ZCT",
+            "reading": null,
+            "abbreviation": null,
+            "link": "relay/gr.html",
+            "summary": "零相変流器（Zero-phase Current Transformer）"
+        },
+        {
+            "word": "零相変流器",
+            "reading": "れいそうへんりゅうき",
+            "abbreviation": "ZCT",
+            "link": "relay/gr.html",
+            "summary": "地絡電流を検出するための変流器"
+        }
+    ]
+}

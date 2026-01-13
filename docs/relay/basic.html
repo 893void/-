@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>保護継電器の基礎 - ほあんペディア</title>
+    <meta name="description" content="保護継電器の原理と基礎知識">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <!-- 共通ヘッダー -->
+    <header class="site-header">
+        <a href="../index.html">
+            <span class="home-icon">🏠</span>
+            <span>ほあんペディア</span>
+        </a>
+    </header>
+
+    <!-- パンくずナビゲーション -->
+    <nav class="breadcrumb">
+        <a href="index.html">保護継電器</a>
+        <span>＞</span>
+        <span class="current">基礎</span>
+    </nav>
+
+    <!-- メインコンテンツ -->
+    <main class="main-content">
+        <h1 class="page-title">保護継電器の基礎</h1>
+
+        <!-- 概要 -->
+        <section class="section">
+            <h2 class="section-title">概要</h2>
+            <p>保護継電器とは、電力系統に発生する異常（過電流、地絡、電圧異常など）を検出し、遮断器に遮断信号を送ることで系統を保護する装置です。</p>
+            <p>電力系統の安全を守る「番人」として、24時間365日稼働し続けています。</p>
+        </section>
+
+        <!-- 図解 -->
+        <section class="section">
+            <h2 class="section-title">図解</h2>
+            <div class="diagram-area">
+                <p class="diagram-placeholder">【保護継電器の動作原理図】<br>異常検出 → 継電器動作 → 遮断器トリップ → 系統保護</p>
+            </div>
+        </section>
+
+        <!-- 詳細説明 -->
+        <section class="section">
+            <h2 class="section-title">詳細説明</h2>
+
+            <h3 class="mt-24 mb-16">なぜ保護継電器が必要なのか</h3>
+            <p>電力系統では、落雷、機器故障、絶縁劣化などにより、様々な異常が発生する可能性があります。これらの異常を放置すると、機器の損傷、火災、広範囲の停電につながります。</p>
+            <p>保護継電器は、これらの異常を瞬時に検出し、故障箇所を系統から切り離すことで、被害の拡大を防ぎます。</p>
+
+            <h3 class="mt-24 mb-16">保護継電器の基本動作</h3>
+            <p>保護継電器は、以下の流れで動作します。</p>
+            <ol class="mt-16">
+                <li><strong>検出</strong>：CT（変流器）やVT（計器用変圧器）から電流・電圧情報を受け取る</li>
+                <li><strong>判定</strong>：設定値と比較し、異常かどうかを判断する</li>
+                <li><strong>動作</strong>：異常と判定した場合、遮断器にトリップ信号を送る</li>
+                <li><strong>遮断</strong>：遮断器が開放され、故障箇所が系統から切り離される</li>
+            </ol>
+
+            <h3 class="mt-24 mb-16">保護継電器の種類</h3>
+            <p>保護継電器は、検出する異常の種類によって分類されます。</p>
+            <ul class="mt-16">
+                <li><strong>過電流継電器（OCR）</strong>：電流が設定値を超えた場合に動作</li>
+                <li><strong>地絡継電器（GR）</strong>：地絡（漏電）を検出して動作</li>
+                <li><strong>方向性地絡継電器（DGR）</strong>：地絡電流の方向を判別して動作</li>
+                <li><strong>地絡過電圧継電器（OVGR）</strong>：零相電圧が設定値を超えた場合に動作</li>
+                <li><strong>不足電圧継電器（UVR）</strong>：電圧が設定値を下回った場合に動作</li>
+            </ul>
+        </section>
+
+        <!-- 関連ページ -->
+        <section class="section">
+            <h2 class="section-title">関連ページ</h2>
+            <div class="related-links">
+                <a href="ocr.html" class="related-link">OCR（過電流継電器）</a>
+                <a href="gr.html" class="related-link">GR（地絡継電器）</a>
+                <a href="dgr.html" class="related-link">DGR（方向性地絡継電器）</a>
+                <a href="ovgr.html" class="related-link">OVGR（地絡過電圧継電器）</a>
+                <a href="uvr.html" class="related-link">UVR（不足電圧継電器）</a>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
