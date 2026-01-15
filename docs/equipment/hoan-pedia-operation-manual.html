@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>hoan-pedia-operation-manual - ほあんペディア</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <!-- 共通ヘッダー -->
+    <header class="site-header">
+        <a href="../index.html">
+            <span class="home-icon">🏠</span>
+            <span>ほあんペディア</span>
+        </a>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="main-content">
+        
+        <h1 class="page-title">hoan-pedia-operation-manual</h1>
+
+<article class="article-content">
+    <h1>ほあんペディア 運用・編集マニュアル</h1>
+<p>作成日：2026年1月15日  </p>
+<p>対象：開発者（コンテンツ管理者）</p>
+<hr>
+<h2>1. はじめに</h2>
+<p>このマニュアルでは、ほあんペディアのコンテンツを追加・編集する方法を説明します。</p>
+<p>基本的な流れ：</p>
+<pre><code>Markdownファイルを編集 → build.py を実行 → HTMLが生成される</code></pre>
+<hr>
+<h2>2. ファイル配置場所</h2>
+<h3>2.1 コンテンツの配置先</h3>
+<table class="md-table"><thead><tr>
+<th>種類</th>
+<th>配置先</th>
+<th>説明</th>
+</tr></thead><tbody>
+<tr>
+<td><a href="../relay/basic.html" class="auto-link">保護継電器</a></td>
+<td>`content/relay/`</td>
+<td><a href="../relay/ocr.html" class="auto-link">OCR</a>、<a href="../relay/gr.html" class="auto-link">GR</a>、<a href="../relay/dgr.html" class="auto-link">DGR</a>等</td>
+</tr>
+<tr>
+<td>機器</td>
+<td>`content/equipment/`</td>
+<td>変圧器、VCB、PAS等</td>
+</tr>
+<tr>
+<td>単線結線図</td>
+<td>`content/sld/`</td>
+<td>単線結線図ハブページ</td>
+</tr>
+<tr>
+<td>学習ガイド</td>
+<td>`content/guide/`</td>
+<td>新人向け、月次、年次</td>
+</tr>
+<tr>
+<td>法令</td>
+<td>`content/standards/`</td>
+<td><a href="../standards/index.html" class="auto-link">電技</a>、電技解釈</td>
+</tr>
+</tbody></table>
+<h3>2.2 データファイル</h3>
+<table class="md-table"><thead><tr>
+<th>ファイル</th>
+<th>配置先</th>
+<th>説明</th>
+</tr></thead><tbody>
+<tr>
+<td>用語辞書</td>
+<td>`data/terms.json`</td>
+<td>自動リンク用</td>
+</tr>
+<tr>
+<td>お知らせ</td>
+<td>`data/news.json`</td>
+<td>トップページのお知らせ</td>
+</tr>
+<tr>
+<td>更新履歴</td>
+<td>`data/updates.json`</td>
+<td>更新履歴</td>
+</tr>
+<tr>
+<td>サイト設定</td>
+<td>`data/site.json`</td>
+<td>サイト全体の設定</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>3. Markdownファイルの書き方</h2>
+<h3>3.1 フロントマター</h3>
+<p>すべてのMarkdownファイルの先頭に以下を記述：</p>
+<pre><code>---
+title: ページタイトル
+description: ページの説明（検索結果等に表示）
+category: カテゴリ名
+order: 表示順（数値、小さいほど上）
+template: article または index
+---</code></pre>
+<p><strong>template の種類</strong></p>
+<table class="md-table"><thead><tr>
+<th>template</th>
+<th>用途</th>
+</tr></thead><tbody>
+<tr>
+<td>`article`</td>
+<td>通常のコンテンツページ</td>
+</tr>
+<tr>
+<td>`index`</td>
+<td>目次・一覧ページ</td>
+</tr>
+</tbody></table>
+<h3>3.2 見出しの使い方</h3>
+<pre><code># 大見出し（ページタイトル）
+
+## 中見出し（セクション）
+
+### 小見出し（サブセクション）</code></pre>
+<ul>
+<li>`#` はページに1つだけ</li>
+<li>`##` でセクションを区切る</li>
+<li>`###` は `##` の中で使う</li>
+</ul>
+<h3>3.3 テーブルの書き方</h3>
+<pre><code>| 項目 | 説明 |
+|------|------|
+| 内容1 | 説明1 |
+| 内容2 | 説明2 |</code></pre>
+<p><strong>表示結果</strong></p>
+<table class="md-table"><thead><tr>
+<th>項目</th>
+<th>説明</th>
+</tr></thead><tbody>
+<tr>
+<td>内容1</td>
+<td>説明1</td>
+</tr>
+<tr>
+<td>内容2</td>
+<td>説明2</td>
+</tr>
+</tbody></table>
+<h3>3.4 リンクの書き方</h3>
+<p><strong>同じフォルダ内</strong></p>
+<pre><code>[変圧器](transformer.html)</code></pre>
+<p><strong>別フォルダ</strong></p>
+<pre><code>[OCR（<a href="../relay/ocr.html" class="auto-link">過電流継電器</a>）](../relay/ocr.html)</code></pre>
+<p><strong>外部サイト</strong></p>
+<pre><code>[<a href="../standards/index.html" class="auto-link">電気設備技術基準</a>](https://laws.e-gov.go.jp/...)</code></pre>
+<h3>3.5 リストの書き方</h3>
+<p><strong>箇条書き</strong></p>
+<pre><code>- 項目1
+- 項目2
+- 項目3</code></pre>
+<p><strong>番号付き</strong></p>
+<pre><code>1. 手順1
+2. 手順2
+3. 手順3</code></pre>
+<hr>
+<h2>4. 新しいページを追加する手順</h2>
+<h3>4.1 手順</h3>
+<p>該当フォルダに `.md` ファイルを作成</p>
+<p>フロントマターを記述</p>
+<p>本文をMarkdownで記述</p>
+<p>目次ページ（`_index.md`）にリンクを追加</p>
+<p>`python build.py` を実行</p>
+<p>ブラウザで確認</p>
+<h3>4.2 例：新しい機器ページを追加</h3>
+<p><strong>1. ファイル作成</strong></p>
+<p>`content/equipment/new-equipment.md` を作成</p>
+<p><strong>2. 内容を記述</strong></p>
+<pre><code>---
+title: 新しい機器
+description: 新しい機器の説明
+category: 機器
+order: 20
+template: article
+---
+
+# 新しい機器
+
+## 概要
+
+ここに概要を書く。
+
+## 基礎知識
+
+ここに基礎知識を書く。
+
+...</code></pre>
+<p><strong>3. 目次にリンクを追加</strong></p>
+<p>`content/equipment/_index.md` を編集し、テーブルに行を追加：</p>
+<pre><code>| [新しい機器](new-equipment.html) | 新しい機器の説明 |</code></pre>
+<p><strong>4. ビルド</strong></p>
+<pre><code>python build.py</code></pre>
+<p><strong>5. 確認</strong></p>
+<p>ブラウザで `docs/equipment/new-equipment.html` を開いて確認</p>
+<hr>
+<h2>5. 既存ページを編集する手順</h2>
+<h3>5.1 手順</h3>
+<p>該当の `.md` ファイルを開く</p>
+<p>内容を編集</p>
+<p>`python build.py` を実行</p>
+<p>ブラウザで確認</p>
+<h3>5.2 注意事項</h3>
+<ul>
+<li><strong>追記禁止、全置換必須</strong>：部分的な追記ではなく、ファイル全体を正しい状態に更新する</li>
+<li>編集前にバックアップを取ることを推奨</li>
+</ul>
+<hr>
+<h2>6. 自動リンク機能（terms.json）</h2>
+<h3>6.1 仕組み</h3>
+<p>`data/terms.json` に登録された単語が、本文中で自動的にリンクに変換される。</p>
+<h3>6.2 terms.json の書き方</h3>
+<pre><code>{
+  "terms": [
+    {
+      "word": "変圧器",
+      "link": "equipment/transformer.html",
+      "summary": "電磁誘導を利用して電圧を変換する機器"
+    },
+    {
+      "word": "VCB",
+      "link": "equipment/vcb.html",
+      "summary": "真空遮断器。短絡電流を遮断する"
+    }
+  ]
+}</code></pre>
+<h3>6.3 ルール</h3>
+<ul>
+<li>長い単語が優先される（<a href="../relay/ovgr.html" class="auto-link">OVGR</a> > GR）</li>
+<li>同一ページ内では初出のみリンク化</li>
+<li>不要なリンクは該当行を削除</li>
+</ul>
+<h3>6.4 新しい用語を追加する手順</h3>
+<p>`data/terms.json` を開く</p>
+<p>`terms` 配列に新しいオブジェクトを追加</p>
+<p>`python build.py` を実行</p>
+<hr>
+<h2>7. 目次ページ（_index.md）の管理</h2>
+<h3>7.1 役割</h3>
+<p>各フォルダの `_index.md` は、そのフォルダのトップページ（目次）になる。</p>
+<h3>7.2 更新タイミング</h3>
+<ul>
+<li>新しいページを追加したとき</li>
+<li>ページを削除したとき</li>
+<li>ページの順番を変更したいとき</li>
+</ul>
+<h3>7.3 例：equipment/_index.md</h3>
+<pre><code>## 開閉装置
+
+| ページ | 説明 |
+|--------|------|
+| [VCB（真空遮断器）](vcb.html) | 短絡電流を遮断する主遮断装置 |
+| [PAS（高圧気中開閉器）](pas.html) | 責任分界点に設置、波及事故防止 |</code></pre>
+<hr>
+<h2>8. ビルドシステム</h2>
+<h3>8.1 基本コマンド</h3>
+<pre><code>python build.py</code></pre>
+<h3>8.2 出力先</h3>
+<p>生成されたHTMLは `docs/` フォルダに出力される。</p>
+<pre><code>content/equipment/transformer.md
+    ↓ build.py
+docs/equipment/transformer.html</code></pre>
+<h3>8.3 トラブルシューティング</h3>
+<table class="md-table"><thead><tr>
+<th>症状</th>
+<th>原因</th>
+<th>対策</th>
+</tr></thead><tbody>
+<tr>
+<td>HTMLが生成されない</td>
+<td>Markdownの文法エラー</td>
+<td>Markdownを確認</td>
+</tr>
+<tr>
+<td>リンクが動作しない</td>
+<td>パスの誤り</td>
+<td>リンク先パスを確認</td>
+</tr>
+<tr>
+<td>スタイルが崩れる</td>
+<td>Markdownの書き方</td>
+<td>テーブル等の文法を確認</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>9. コンテンツ作成のルール</h2>
+<h3>9.1 情報の品質管理</h3>
+<table class="md-table"><thead><tr>
+<th>原則</th>
+<th>内容</th>
+</tr></thead><tbody>
+<tr>
+<td>AIの出力をそのまま掲載しない</td>
+<td>ハルシネーションリスク</td>
+</tr>
+<tr>
+<td>人間による最終確認必須</td>
+<td>技術員が確認・承認</td>
+</tr>
+<tr>
+<td>法令原文は改変禁止</td>
+<td>電気設備技術基準等はそのまま掲載</td>
+</tr>
+<tr>
+<td>解説は根拠を明示</td>
+<td>どの法令・規程に基づくか示す</td>
+</tr>
+</tbody></table>
+<h3>9.2 ページ構成の標準</h3>
+<p>機器ページの標準構成：</p>
+<pre><code># 機器名
+
+## 概要
+（1〜2文で「何をする機器か」）
+
+## 基礎知識
+（動作原理、構造）
+
+## 種類
+（バリエーションがあれば）
+
+## 月次点検のポイント
+（チェックリスト、確認項目）
+
+## 年次点検のポイント
+（測定・試験項目）
+
+## 関連法令
+（電技解釈の該当条文）
+
+## 関連ページ
+（他ページへのリンク）
+
+## 更新履歴</code></pre>
+<h3>9.3 表記の統一</h3>
+<table class="md-table"><thead><tr>
+<th>項目</th>
+<th>統一表記</th>
+</tr></thead><tbody>
+<tr>
+<td>変圧器</td>
+<td>TR または 変圧器</td>
+</tr>
+<tr>
+<td>真空遮断器</td>
+<td>VCB</td>
+</tr>
+<tr>
+<td>過電流継電器</td>
+<td>OCR</td>
+</tr>
+<tr>
+<td><a href="../relay/gr.html" class="auto-link">地絡継電器</a></td>
+<td>GR</td>
+</tr>
+<tr>
+<td><a href="../relay/dgr.html" class="auto-link">方向性地絡継電器</a></td>
+<td>DGR</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>10. バックアップと復元</h2>
+<h3>10.1 バックアップ対象</h3>
+<table class="md-table"><thead><tr>
+<th>フォルダ</th>
+<th>内容</th>
+</tr></thead><tbody>
+<tr>
+<td>`content/`</td>
+<td>コンテンツ（Markdown）</td>
+</tr>
+<tr>
+<td>`data/`</td>
+<td>データファイル</td>
+</tr>
+<tr>
+<td>`templates/`</td>
+<td>テンプレート</td>
+</tr>
+<tr>
+<td>`lib/`</td>
+<td>ビルドモジュール</td>
+</tr>
+</tbody></table>
+<p>`docs/` はビルドで再生成できるため、バックアップ不要。</p>
+<h3>10.2 推奨バックアップ方法</h3>
+<ul>
+<li>Gitでバージョン管理</li>
+<li>定期的にリポジトリをpush</li>
+</ul>
+<hr>
+<h2>11. よくある作業</h2>
+<h3>11.1 新しい機器ページを追加</h3>
+<p>`content/equipment/` にMarkdownファイル作成</p>
+<p>`content/equipment/_index.md` にリンク追加</p>
+<p>`data/terms.json` に用語追加（任意）</p>
+<p>`python build.py`</p>
+<p>確認</p>
+<h3>11.2 誤字を修正</h3>
+<p>該当の `.md` ファイルを開く</p>
+<p>修正</p>
+<p>`python build.py`</p>
+<p>確認</p>
+<h3>11.3 ページを削除</h3>
+<p>`.md` ファイルを削除</p>
+<p>`_index.md` からリンクを削除</p>
+<p>`terms.json` から該当用語を削除（必要なら）</p>
+<p>`python build.py`</p>
+<p>`docs/` の該当HTMLも削除（自動削除されない場合）</p>
+<hr>
+<h2>更新履歴</h2>
+<table class="md-table"><thead><tr>
+<th>日付</th>
+<th>内容</th>
+</tr></thead><tbody>
+<tr>
+<td>2026-01-15</td>
+<td>初版作成</td>
+</tr>
+</tbody></table>
+<hr>
+<p><strong>マニュアル終了</strong></p>
+</article>
+    </main>
+</body>
+
+</html>

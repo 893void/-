@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>ZCT（零相変流器） - ほあんペディア</title>
+    <meta name="description" content="零相変流器の基礎知識と点検ポイント">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <!-- 共通ヘッダー -->
+    <header class="site-header">
+        <a href="../index.html">
+            <span class="home-icon">🏠</span>
+            <span>ほあんペディア</span>
+        </a>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="main-content">
+        
+        <h1 class="page-title">ZCT（零相変流器）</h1>
+
+<article class="article-content">
+    <h1><a href="../relay/gr.html" class="auto-link">ZCT</a>（<a href="../relay/gr.html" class="auto-link">零相変流器</a>）</h1>
+<h2>概要</h2>
+<p><strong>ZCT（Zero-phase Current Transformer）</strong> は、三相一括で零相電流（地絡電流）を検出する変流器。</p>
+<p><a href="../relay/gr.html" class="auto-link">地絡継電器</a>（<a href="../relay/gr.html" class="auto-link">GR</a>、<a href="../relay/dgr.html" class="auto-link">DGR</a>）と組み合わせて <strong>地絡保護</strong> に使用する。</p>
+<hr>
+<h2>基礎知識</h2>
+<h3>零相電流とは</h3>
+<p>正常な三相回路では、三相の電流のベクトル和はゼロになる。</p>
+<pre><code>Ia + Ib + Ic = 0（正常時）</code></pre>
+<p>地絡（漏電）が発生すると、漏れた電流の分だけベクトル和がゼロにならない。</p>
+<pre><code>Ia + Ib + Ic = I₀（地絡時）</code></pre>
+<p>この <strong>I₀（零相電流）</strong> を検出するのがZCT。</p>
+<h3>動作原理</h3>
+<p>三相の電線をZCTの穴に一括貫通させる</p>
+<p>正常時：三相の磁束が打ち消し合い、二次側電流ゼロ</p>
+<p>地絡時：零相電流による磁束が発生し、二次側に電流が流れる</p>
+<p>この電流を継電器で検出して地絡を判断</p>
+<h3>構造</h3>
+<table class="md-table"><thead><tr>
+<th>部位</th>
+<th>説明</th>
+</tr></thead><tbody>
+<tr>
+<td>鉄心</td>
+<td>リング状、三相一括貫通用</td>
+</tr>
+<tr>
+<td>二次巻線</td>
+<td>継電器に接続</td>
+</tr>
+<tr>
+<td>ケース</td>
+<td>絶縁保護</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>種類</h2>
+<h3>用途による分類</h3>
+<table class="md-table"><thead><tr>
+<th>種類</th>
+<th>用途</th>
+</tr></thead><tbody>
+<tr>
+<td>高圧回路用ZCT</td>
+<td>GR、DGR用（高圧側の地絡検出）</td>
+</tr>
+<tr>
+<td>B種接地線用ZCT</td>
+<td>低圧側の漏電監視</td>
+</tr>
+</tbody></table>
+<h3>設置位置による使い分け</h3>
+<p><strong>高圧回路用ZCT</strong></p>
+<ul>
+<li>設置位置：高圧ケーブルを一括貫通</li>
+<li>組み合わせ：GR、DGR</li>
+<li>検出対象：高圧側の地絡</li>
+</ul>
+<p><strong>B種接地線用ZCT</strong></p>
+<ul>
+<li>設置位置：変圧器のB種接地線を貫通</li>
+<li>組み合わせ：絶縁監視装置（Esnavi等）</li>
+<li>検出対象：低圧側の漏電</li>
+</ul>
+<hr>
+<h2>月次点検のポイント</h2>
+<h3>チェックリスト</h3>
+<table class="md-table"><thead><tr>
+<th>No.</th>
+<th>確認項目</th>
+<th>確認内容</th>
+</tr></thead><tbody>
+<tr>
+<td>1</td>
+<td>外観</td>
+<td>損傷、変形、腐食がないか</td>
+</tr>
+<tr>
+<td>2</td>
+<td>貫通状態</td>
+<td>電線が正しく貫通しているか</td>
+</tr>
+<tr>
+<td>3</td>
+<td>二次配線</td>
+<td>断線、緩みがないか</td>
+</tr>
+<tr>
+<td>4</td>
+<td>取付状態</td>
+<td>固定が確実か</td>
+</tr>
+</tbody></table>
+<h3>貫通状態の確認</h3>
+<p><strong>正しい貫通</strong></p>
+<ul>
+<li>三相の電線が全てZCTの穴を通っている</li>
+<li>接地線がZCTを通っていない（高圧回路用の場合）</li>
+</ul>
+<p><strong>誤った貫通の例</strong></p>
+<ul>
+<li>一部の相が貫通していない → 誤動作の原因</li>
+<li>接地線が一緒に貫通している → 検出できない</li>
+</ul>
+<h3>B種接地線用ZCTの確認</h3>
+<p>変圧器のB種接地線がZCTを正しく貫通しているか確認する。</p>
+<p><strong>確認ポイント</strong></p>
+<ul>
+<li>B種接地線がZCTの穴を通っていること</li>
+<li>他の配線が一緒に通っていないこと</li>
+<li>接続が確実なこと</li>
+</ul>
+<hr>
+<h2>年次点検のポイント</h2>
+<h3>月次点検との違い</h3>
+<table class="md-table"><thead><tr>
+<th>項目</th>
+<th>月次点検</th>
+<th>年次点検</th>
+</tr></thead><tbody>
+<tr>
+<td>停電</td>
+<td>不要</td>
+<td>必要</td>
+</tr>
+<tr>
+<td>絶縁抵抗測定</td>
+<td>しない</td>
+<td>する</td>
+</tr>
+<tr>
+<td>継電器試験</td>
+<td>しない</td>
+<td>する</td>
+</tr>
+</tbody></table>
+<h3>年次点検での確認項目</h3>
+<table class="md-table"><thead><tr>
+<th>項目</th>
+<th>内容</th>
+</tr></thead><tbody>
+<tr>
+<td>絶縁抵抗測定</td>
+<td>二次側の絶縁抵抗</td>
+</tr>
+<tr>
+<td>GR/DGR試験</td>
+<td>継電器との連動確認</td>
+</tr>
+<tr>
+<td>貫通状態確認</td>
+<td>工事後の変更がないか</td>
+</tr>
+<tr>
+<td>清掃</td>
+<td>汚損の除去</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>継電器との組み合わせ</h2>
+<table class="md-table"><thead><tr>
+<th>組み合わせ</th>
+<th>保護内容</th>
+</tr></thead><tbody>
+<tr>
+<td>ZCT + GR</td>
+<td>地絡保護（無方向）</td>
+</tr>
+<tr>
+<td>ZCT + DGR</td>
+<td>方向性地絡保護</td>
+</tr>
+<tr>
+<td>ZCT + 絶縁監視装置</td>
+<td>低圧側漏電監視</td>
+</tr>
+</tbody></table>
+<h3>GR（地絡継電器）との接続</h3>
+<p>ZCTで検出した零相電流をGRに入力し、設定値を超えると遮断器をトリップさせる。</p>
+<h3>DGR（<a href="../relay/dgr.html" class="auto-link">方向性地絡継電器</a>）との接続</h3>
+<p>ZCTの零相電流と、ZPD（またはGPT）の零相電圧を組み合わせて、事故方向を判別する。</p>
+<hr>
+<h2>CTとの違い</h2>
+<table class="md-table"><thead><tr>
+<th>項目</th>
+<th>CT</th>
+<th>ZCT</th>
+</tr></thead><tbody>
+<tr>
+<td>測定対象</td>
+<td>各相の電流</td>
+<td>零相電流（三相一括）</td>
+</tr>
+<tr>
+<td>貫通方式</td>
+<td>各相個別</td>
+<td>三相一括</td>
+</tr>
+<tr>
+<td>用途</td>
+<td>電流測定、過電流保護</td>
+<td>地絡検出</td>
+</tr>
+<tr>
+<td>二次側開放</td>
+<td>厳禁（高電圧発生）</td>
+<td>危険度は低いが推奨しない</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>トラブル事例</h2>
+<h3>誤動作の原因</h3>
+<table class="md-table"><thead><tr>
+<th>原因</th>
+<th>対策</th>
+</tr></thead><tbody>
+<tr>
+<td>貫通忘れ</td>
+<td>工事後に必ず確認</td>
+</tr>
+<tr>
+<td>誤貫通（接地線が一緒）</td>
+<td>正しい貫通方法を確認</td>
+</tr>
+<tr>
+<td>外部磁界の影響</td>
+<td>設置位置の見直し</td>
+</tr>
+<tr>
+<td>二次配線の断線</td>
+<td>配線状態を確認</td>
+</tr>
+</tbody></table>
+<h3>不動作の原因</h3>
+<table class="md-table"><thead><tr>
+<th>原因</th>
+<th>対策</th>
+</tr></thead><tbody>
+<tr>
+<td>ZCT故障</td>
+<td>継電器試験で確認</td>
+</tr>
+<tr>
+<td>継電器故障</td>
+<td>継電器試験で確認</td>
+</tr>
+<tr>
+<td>配線誤り</td>
+<td>配線を確認</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>関連法令</h2>
+<table class="md-table"><thead><tr>
+<th>法令</th>
+<th>条文</th>
+<th>内容</th>
+</tr></thead><tbody>
+<tr>
+<td><a href="../standards/index.html" class="auto-link">電技</a>解釈</td>
+<td>第36条</td>
+<td>地絡遮断装置の施設</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>関連ページ</h2>
+<ul>
+<li><a href="ct.html">CT（変流器）</a></li>
+<li><a href="zpd.html">ZPD（零相電圧検出器）</a></li>
+<li><a href="../relay/gr.html">GR（地絡継電器）</a></li>
+<li><a href="../relay/dgr.html">DGR（方向性地絡継電器）</a></li>
+<li><a href="transformer.html">変圧器</a></li>
+</ul>
+<hr>
+<h2>更新履歴</h2>
+<table class="md-table"><thead><tr>
+<th>日付</th>
+<th>内容</th>
+</tr></thead><tbody>
+<tr>
+<td>2026-01-15</td>
+<td>初版作成</td>
+</tr>
+</tbody></table>
+</article>
+    </main>
+</body>
+
+</html>

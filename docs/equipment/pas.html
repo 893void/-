@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>PAS（高圧気中開閉器） - ほあんペディア</title>
+    <meta name="description" content="高圧気中開閉器の基礎知識と点検ポイント">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <!-- 共通ヘッダー -->
+    <header class="site-header">
+        <a href="../index.html">
+            <span class="home-icon">🏠</span>
+            <span>ほあんペディア</span>
+        </a>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="main-content">
+        
+        <h1 class="page-title">PAS（高圧気中開閉器）</h1>
+
+<article class="article-content">
+    <h1>PAS（高圧気中開閉器）</h1>
+<h2>概要</h2>
+<p><strong>PAS（Pole mounted Air Switch）</strong> は、電柱や引込柱に設置される高圧気中開閉器。</p>
+<p>需要家の <strong>責任分界点</strong> に設置され、波及事故防止の重要な役割を担う。</p>
+<p>SOG（Storage Over current Ground）機能付きが一般的。</p>
+<hr>
+<h2>基礎知識</h2>
+<h3>役割</h3>
+<p><strong>責任分界点の明確化</strong>：電力会社と需要家の境界</p>
+<p><strong>波及事故防止</strong>：構内事故を自動遮断し、配電線への波及を防ぐ</p>
+<p><strong>区分開閉</strong>：点検時の電路切り離し</p>
+<h3>構造</h3>
+<table class="md-table"><thead><tr>
+<th>部位</th>
+<th>説明</th>
+</tr></thead><tbody>
+<tr>
+<td>開閉部</td>
+<td>気中で開閉する接点</td>
+</tr>
+<tr>
+<td>碍子</td>
+<td>絶縁支持物</td>
+</tr>
+<tr>
+<td>操作ハンドル</td>
+<td>手動開閉用（フック棒で操作）</td>
+</tr>
+<tr>
+<td>SOG制御装置</td>
+<td>過電流・地絡検出と遮断制御</td>
+</tr>
+<tr>
+<td>方向性SOG</td>
+<td><a href="../relay/dgr.html" class="auto-link">DGR</a>機能内蔵型</td>
+</tr>
+</tbody></table>
+<h3>SOG機能とは</h3>
+<p><strong>SOG = Storage Over current Ground</strong></p>
+<ul>
+<li><strong>S（Storage）</strong>：蓄勢。ばねにエネルギーを蓄える</li>
+<li><strong>O（Over current）</strong>：過電流検出</li>
+<li><strong>G（Ground）</strong>：地絡検出</li>
+</ul>
+<p>構内で短絡や地絡が発生すると、配電線の再閉路前に自動でPASを開放する。</p>
+<hr>
+<h2>種類</h2>
+<h3>機能による分類</h3>
+<table class="md-table"><thead><tr>
+<th>種類</th>
+<th>機能</th>
+</tr></thead><tbody>
+<tr>
+<td>普通PAS</td>
+<td>手動開閉のみ</td>
+</tr>
+<tr>
+<td>SOG付PAS</td>
+<td>過電流・地絡で自動遮断</td>
+</tr>
+<tr>
+<td>方向性SOG付PAS</td>
+<td>D<a href="../relay/gr.html" class="auto-link">GR</a>機能内蔵、もらい事故防止</td>
+</tr>
+<tr>
+<td>UGS</td>
+<td>地中線用（キャビネット収納型）</td>
+</tr>
+</tbody></table>
+<h3>方向性SOGの重要性</h3>
+<p><strong>もらい事故とは</strong></p>
+<p>他の需要家で地絡事故が発生したとき、自分の設備のPASが誤動作して停電すること。</p>
+<p><strong>方向性SOGで解決</strong></p>
+<ul>
+<li>電流の方向を判別</li>
+<li>「自分の構内方向」の事故のみ遮断</li>
+<li>「配電線方向」の事故では動作しない</li>
+</ul>
+<hr>
+<h2>月次点検のポイント</h2>
+<h3>チェックリスト</h3>
+<table class="md-table"><thead><tr>
+<th>No.</th>
+<th>確認項目</th>
+<th>確認内容</th>
+</tr></thead><tbody>
+<tr>
+<td>1</td>
+<td>外観</td>
+<td>損傷、変形、腐食がないか</td>
+</tr>
+<tr>
+<td>2</td>
+<td>碍子</td>
+<td>汚損、ひび割れがないか</td>
+</tr>
+<tr>
+<td>3</td>
+<td>開閉表示</td>
+<td>表示が実際の状態と一致しているか</td>
+</tr>
+<tr>
+<td>4</td>
+<td>引込線</td>
+<td>断線、たるみがないか</td>
+</tr>
+<tr>
+<td>5</td>
+<td>鳥害</td>
+<td>鳥の巣、糞害がないか</td>
+</tr>
+<tr>
+<td>6</td>
+<td>樹木接触</td>
+<td>樹木が接近していないか</td>
+</tr>
+<tr>
+<td>7</td>
+<td>SOG表示灯</td>
+<td>正常に点灯しているか（地上設置の場合）</td>
+</tr>
+</tbody></table>
+<h3>碍子の汚損</h3>
+<p>碍子が汚損すると絶縁が低下し、地絡事故の原因になる。</p>
+<table class="md-table"><thead><tr>
+<th>環境</th>
+<th>汚損の原因</th>
+</tr></thead><tbody>
+<tr>
+<td>海岸部</td>
+<td>塩分付着</td>
+</tr>
+<tr>
+<td>工場周辺</td>
+<td>粉塵、煤煙</td>
+</tr>
+<tr>
+<td>交通量の多い場所</td>
+<td>排気ガス</td>
+</tr>
+</tbody></table>
+<p>汚損がひどい場合は清掃または碍子交換を検討。</p>
+<hr>
+<h2>年次点検のポイント</h2>
+<h3>月次点検との違い</h3>
+<table class="md-table"><thead><tr>
+<th>項目</th>
+<th>月次点検</th>
+<th>年次点検</th>
+</tr></thead><tbody>
+<tr>
+<td>停電</td>
+<td>不要</td>
+<td>必要</td>
+</tr>
+<tr>
+<td>絶縁抵抗測定</td>
+<td>しない</td>
+<td>する</td>
+</tr>
+<tr>
+<td>動作試験</td>
+<td>しない</td>
+<td>する</td>
+</tr>
+<tr>
+<td>清掃</td>
+<td>しない</td>
+<td>する</td>
+</tr>
+</tbody></table>
+<h3>年次点検での確認項目</h3>
+<table class="md-table"><thead><tr>
+<th>項目</th>
+<th>内容</th>
+</tr></thead><tbody>
+<tr>
+<td>絶縁抵抗測定</td>
+<td>主回路の絶縁抵抗</td>
+</tr>
+<tr>
+<td>SOG動作試験</td>
+<td>過電流・地絡での動作確認</td>
+</tr>
+<tr>
+<td>手動開閉試験</td>
+<td>フック棒での開閉確認</td>
+</tr>
+<tr>
+<td>碍子清掃</td>
+<td>汚損の除去</td>
+</tr>
+</tbody></table>
+<h3>SOG動作試験</h3>
+<p>SOG制御装置が正常に動作するか確認する。</p>
+<p>試験器を接続</p>
+<p>過電流試験：設定値で動作するか</p>
+<p>地絡試験：設定値で動作するか</p>
+<p>動作時間の確認</p>
+<hr>
+<h2>波及事故防止</h2>
+<h3>波及事故とは</h3>
+<p>需要家の構内事故が原因で、配電線全体が停電すること。</p>
+<p><strong>影響</strong></p>
+<ul>
+<li>同じ配電線の他の需要家が停電</li>
+<li>電力会社からの損害賠償請求の可能性</li>
+<li>社会的信用の低下</li>
+</ul>
+<h3>PASの役割</h3>
+<p>構内で事故発生</p>
+<p>配電線の保護装置が動作（一旦停電）</p>
+<p>配電線が再閉路する <strong>前に</strong> PASが開放</p>
+<p>構内だけが切り離され、配電線は復旧</p>
+<p><strong>重要</strong>：PASが正常に動作しないと波及事故になる</p>
+<hr>
+<h2>UGS（地中線用）</h2>
+<p>地中引込の場合は <strong>UGS（Underground Gas Switch）</strong> を使用。</p>
+<table class="md-table"><thead><tr>
+<th>項目</th>
+<th>PAS</th>
+<th>UGS</th>
+</tr></thead><tbody>
+<tr>
+<td>設置場所</td>
+<td>電柱（架空）</td>
+<td>地上キャビネット</td>
+</tr>
+<tr>
+<td>絶縁方式</td>
+<td>気中</td>
+<td>SF6ガス</td>
+</tr>
+<tr>
+<td>用途</td>
+<td>架空引込</td>
+<td>地中引込</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>関連法令</h2>
+<table class="md-table"><thead><tr>
+<th>法令</th>
+<th>条文</th>
+<th>内容</th>
+</tr></thead><tbody>
+<tr>
+<td><a href="../standards/index.html" class="auto-link">電技</a>解釈</td>
+<td>第38条</td>
+<td>高圧又は特別高圧の電路の遮断器の施設</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>関連ページ</h2>
+<ul>
+<li><a href="vcb.html">VCB（真空遮断器）</a></li>
+<li><a href="lbs.html">LBS（高圧負荷開閉器）</a></li>
+<li><a href="../relay/dgr.html">DGR（方向性地絡継電器）</a></li>
+<li><a href="../relay/ovgr.html">OVGR（地絡過電圧継電器）</a></li>
+</ul>
+<hr>
+<h2>更新履歴</h2>
+<table class="md-table"><thead><tr>
+<th>日付</th>
+<th>内容</th>
+</tr></thead><tbody>
+<tr>
+<td>2026-01-15</td>
+<td>初版作成</td>
+</tr>
+</tbody></table>
+</article>
+    </main>
+</body>
+
+</html>

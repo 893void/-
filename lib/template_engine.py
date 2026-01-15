@@ -93,14 +93,19 @@ class TemplateEngine:
         # コンテキスト変数とマージ
         all_vars = {**site_vars, **context}
         
+        # 特殊パス変数は後で処理するのでスキップ
+        special_vars = {"css_path", "home_path"}
+        
         # {{変数名}} パターンを置換
         def replace_var(match):
             var_name = match.group(1).strip()
+            if var_name in special_vars:
+                return match.group(0)  # そのまま残す
             return str(all_vars.get(var_name, ""))
         
         result = re.sub(r'\{\{(\w+)\}\}', replace_var, template)
         
-        # CSSパスの自動調整
+        # CSSパスの自動調整（特殊変数を処理）
         result = self._adjust_paths(result, context)
         
         return result

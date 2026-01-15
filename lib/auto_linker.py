@@ -50,6 +50,9 @@ class AutoLinker:
         if not self.terms:
             return html_content
         
+        # 現在のページの階層を計算
+        current_depth = self._get_depth(current_page)
+        
         # 既にリンク済みの単語を記録
         linked_words = set()
         
@@ -68,16 +71,44 @@ class AutoLinker:
             if word in linked_words:
                 continue
             
+            # 現在のページからの相対パスを計算
+            relative_link = self._make_relative_link(link, current_depth)
+            
             # 初出のみ置換
             html_content = self._replace_first_outside_tags(
                 html_content,
                 word,
-                link
+                relative_link
             )
             
             linked_words.add(word)
         
         return html_content
+    
+    def _get_depth(self, page_path):
+        """ページパスの階層深度を取得"""
+        if not page_path:
+            return 0
+        
+        # パスを正規化
+        normalized = page_path.replace("\\", "/")
+        
+        # docs/ を除去
+        if "docs/" in normalized:
+            normalized = normalized.split("docs/", 1)[1]
+        
+        # ディレクトリ部分のみ取得（ファイル名を除く）
+        parts = normalized.split("/")
+        return len(parts) - 1  # ファイル名を除く
+    
+    def _make_relative_link(self, link, depth):
+        """現在の階層から相対パスを作成"""
+        if depth == 0:
+            return link
+        
+        # 上位階層への移動を計算
+        prefix = "../" * depth
+        return prefix + link
     
     def _is_same_page(self, link, current_page):
         """同一ページかどうか判定"""

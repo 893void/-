@@ -19,76 +19,45 @@
         </a>
     </header>
 
-    <!-- パンくずナビゲーション -->
-    <nav class="breadcrumb">
-        <a href="index.html">保護継電器</a>
-        <span>＞</span>
-        <span class="current">DGR（方向性地絡継電器）</span>
-    </nav>
-
     <!-- メインコンテンツ -->
     <main class="main-content">
+        
         <h1 class="page-title">DGR（方向性地絡継電器）</h1>
 
-        <!-- 概要 -->
-        <section class="section">
-            <h2 class="section-title">概要</h2>
-            <p>方向性地絡継電器（DGR：Directional Ground Relay）は、地絡電流の方向を判別して動作する保護継電器です。</p>
-            <p>零相電流と零相電圧の位相関係から地絡点の方向を特定し、自系統の地絡のみを選択的に遮断します。</p>
-        </section>
-
-        <!-- 図解 -->
-        <section class="section">
-            <h2 class="section-title">図解</h2>
-            <div class="diagram-area">
-                <p class="diagram-placeholder">【DGRの動作原理図】<br>ZCT + ZPD → 位相比較 → 方向判定 → 動作 → 遮断器トリップ</p>
-            </div>
-        </section>
-
-        <!-- 詳細説明 -->
-        <section class="section">
-            <h2 class="section-title">詳細説明</h2>
-
-            <h3 class="mt-24 mb-16">動作原理</h3>
-            <p>DGRは、ZCT（零相変流器）で零相電流を、ZPD（零相電圧検出器）で零相電圧を検出します。この2つの位相関係を比較することで、地絡が自系統側で発生したか、他系統側で発生したかを判別します。</p>
-
-            <h3 class="mt-24 mb-16">なぜ方向性が必要なのか</h3>
-            <p>高圧配電系統では、他の需要家や配電線での地絡事故でも、零相電流が流れる場合があります。DGRを使用することで、自系統の地絡のみを検出し、不要な遮断（もらい事故）を防止できます。</p>
-
-            <h3 class="mt-24 mb-16">整定項目</h3>
-            <p>DGRの主な整定項目は以下の通りです。</p>
-            <ul class="mt-16">
-                <li><strong>零相電流整定値</strong>：動作する零相電流値の設定</li>
-                <li><strong>零相電圧整定値</strong>：動作する零相電圧値の設定</li>
-                <li><strong>動作時間</strong>：検出から動作までの時間設定</li>
-            </ul>
-        </section>
-
-        <!-- メーカー別情報 -->
-        <section class="section">
-            <h2 class="section-title">メーカー別情報</h2>
-            <p>準備中</p>
-        </section>
-
-        <!-- 関連法令 -->
-        <section class="section">
-            <h2 class="section-title">関連法令</h2>
-            <div class="related-links">
-                <a href="../standards/index.html" class="related-link">電気設備技術基準</a>
-            </div>
-        </section>
-
-        <!-- 関連ページ -->
-        <section class="section">
-            <h2 class="section-title">関連ページ</h2>
-            <div class="related-links">
-                <a href="basic.html" class="related-link">📚 基礎に戻る</a>
-                <a href="ocr.html" class="related-link">OCR（過電流継電器）</a>
-                <a href="gr.html" class="related-link">GR（地絡継電器）</a>
-                <a href="ovgr.html" class="related-link">OVGR（地絡過電圧継電器）</a>
-                <a href="uvr.html" class="related-link">UVR（不足電圧継電器）</a>
-            </div>
-        </section>
+<article class="article-content">
+    <h1><a href="../relay/dgr.html" class="auto-link">DGR</a>（<a href="../relay/dgr.html" class="auto-link">方向性地絡継電器</a>）</h1>
+<h2>概要</h2>
+<p>方向性<a href="../relay/gr.html" class="auto-link">地絡継電器</a>（D<a href="../relay/gr.html" class="auto-link">GR</a>：Directional Ground Relay）は、地絡電流の方向を判別して動作する<a href="../relay/basic.html" class="auto-link">保護継電器</a>です。</p>
+<p>零相電流と零相電圧の位相関係から地絡点の方向を特定し、自系統の地絡のみを選択的に遮断します。</p>
+<h2>図解</h2>
+<pre><code><a href="../relay/gr.html" class="auto-link">ZCT</a> + ZPD → 位相比較 → 方向判定 → 動作 → 遮断器トリップ</code></pre>
+<h2>詳細説明</h2>
+<h3>動作原理</h3>
+<p>DGRは、ZCT（<a href="../relay/gr.html" class="auto-link">零相変流器</a>）で零相電流を、ZPD（零相電圧検出器）で零相電圧を検出します。この2つの位相関係を比較することで、地絡が自系統側で発生したか、他系統側で発生したかを判別します。</p>
+<h3>なぜ方向性が必要なのか</h3>
+<p>高圧配電系統では、他の需要家や配電線での地絡事故でも、零相電流が流れる場合があります。DGRを使用することで、自系統の地絡のみを検出し、不要な遮断（もらい事故）を防止できます。</p>
+<h3>整定項目</h3>
+<p>DGRの主な整定項目は以下の通りです。</p>
+<ul>
+<li><strong>零相電流整定値</strong>：動作する零相電流値の設定</li>
+<li><strong>零相電圧整定値</strong>：動作する零相電圧値の設定</li>
+<li><strong>動作時間</strong>：検出から動作までの時間設定</li>
+</ul>
+<h2>メーカー別情報</h2>
+<p>準備中</p>
+<h2>関連法令</h2>
+<ul>
+<li><a href="../standards/index.html">電気設備技術基準</a></li>
+</ul>
+<h2>関連ページ</h2>
+<ul>
+<li><a href="basic.html">📚 基礎に戻る</a></li>
+<li><a href="ocr.html">OCR（過電流継電器）</a></li>
+<li><a href="gr.html">GR（地絡継電器）</a></li>
+<li><a href="ovgr.html">OVGR（地絡過電圧継電器）</a></li>
+<li><a href="uvr.html">UVR（不足電圧継電器）</a></li>
+</ul>
+</article>
     </main>
 </body>
 

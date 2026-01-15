@@ -201,9 +201,16 @@ class HoanPediaBuilder:
         # フロントマター解析とHTML変換
         frontmatter, html_content = self.markdown_parser.parse_file(md_file)
         
+        # Markdownリンク(.md)をHTMLリンク(.html)に変換
+        html_content = self.convert_md_links(html_content)
+        
         # 自動リンク適用
         output_path = self.get_output_path(md_file)
         html_content = self.auto_linker.apply(html_content, str(output_path))
+        
+        # 出力パスの深さを計算（CSSパス調整用）
+        relative_path = output_path.relative_to(DOCS_DIR)
+        depth = len(relative_path.parts) - 1  # ファイル名を除く
         
         # テンプレート適用
         template_name = frontmatter.get("template", "article")
@@ -211,7 +218,8 @@ class HoanPediaBuilder:
             "page_title": frontmatter.get("title", md_file.stem),
             "page_description": frontmatter.get("description", ""),
             "content": html_content,
-            "breadcrumb": self.generate_breadcrumb(md_file, frontmatter)
+            "breadcrumb": self.generate_breadcrumb(md_file, frontmatter),
+            "depth": depth
         }
         
         final_html = self.template_engine.render(template_name, context)
@@ -227,7 +235,20 @@ class HoanPediaBuilder:
     def get_output_path(self, md_file):
         """Markdownファイルの出力先パスを取得"""
         relative = md_file.relative_to(CONTENT_DIR)
+        # _index.md は index.html として出力
+        if relative.stem == "_index":
+            output_relative = relative.parent / "index.html"
+            return DOCS_DIR / output_relative
         return DOCS_DIR / relative.with_suffix(".html")
+    
+    def convert_md_links(self, html_content):
+        """Markdownリンク(.md)をHTMLリンク(.html)に変換"""
+        import re
+        # href="xxx.md" を href="xxx.html" に変換
+        html_content = re.sub(r'href="([^"]+)\.md"', r'href="\1.html"', html_content)
+        # [text](xxx.md) 形式が残っている場合も変換
+        html_content = re.sub(r'\]\(([^)]+)\.md\)', r'](\1.html)', html_content)
+        return html_content
     
     def generate_breadcrumb(self, md_file, frontmatter):
         """パンくずナビゲーションを生成"""

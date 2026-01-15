@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>CT（変流器） - ほあんペディア</title>
+    <meta name="description" content="変流器の基礎知識と点検ポイント">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <!-- 共通ヘッダー -->
+    <header class="site-header">
+        <a href="../index.html">
+            <span class="home-icon">🏠</span>
+            <span>ほあんペディア</span>
+        </a>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="main-content">
+        
+        <h1 class="page-title">CT（変流器）</h1>
+
+<article class="article-content">
+    <h1>CT（変流器）</h1>
+<h2>概要</h2>
+<p><strong>CT（Current Transformer）</strong> は、大きな電流を計測可能な小さな電流に変換する変成器。</p>
+<p>高圧回路の電流を直接測定するのは危険なため、CTで変換して計器や継電器に入力する。</p>
+<p>二次側の定格電流は <strong>5A</strong> が標準。</p>
+<hr>
+<h2>基礎知識</h2>
+<h3>動作原理</h3>
+<p>CTは変圧器と同じ電磁誘導の原理を利用している。</p>
+<p>一次側（高圧回路）に電流が流れる</p>
+<p>鉄心に磁束が発生</p>
+<p>二次側に電流が誘導される</p>
+<p><strong>変流比</strong></p>
+<pre><code>I₁ / I₂ = N₂ / N₁</code></pre>
+<ul>
+<li>I₁：一次電流</li>
+<li>I₂：二次電流</li>
+<li>N₁：一次巻数</li>
+<li>N₂：二次巻数</li>
+</ul>
+<p>例：変流比 100/5A のCT → 一次側100Aで二次側5A</p>
+<h3>構造</h3>
+<table class="md-table"><thead><tr>
+<th>部位</th>
+<th>説明</th>
+</tr></thead><tbody>
+<tr>
+<td>鉄心</td>
+<td>磁束を通す</td>
+</tr>
+<tr>
+<td>一次巻線</td>
+<td>高圧回路に接続（または貫通型）</td>
+</tr>
+<tr>
+<td>二次巻線</td>
+<td>計器・継電器に接続</td>
+</tr>
+<tr>
+<td>二次端子</td>
+<td>K, L端子（極性あり）</td>
+</tr>
+<tr>
+<td>銘板</td>
+<td>変流比、定格負担等を記載</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>種類</h2>
+<h3>構造による分類</h3>
+<table class="md-table"><thead><tr>
+<th>種類</th>
+<th>特徴</th>
+</tr></thead><tbody>
+<tr>
+<td>巻線形CT</td>
+<td>一次・二次とも巻線がある</td>
+</tr>
+<tr>
+<td>貫通形CT</td>
+<td>一次導体を鉄心に貫通させる</td>
+</tr>
+<tr>
+<td>ブッシング形CT</td>
+<td>機器のブッシングに組み込み</td>
+</tr>
+</tbody></table>
+<h3>用途による分類</h3>
+<table class="md-table"><thead><tr>
+<th>用途</th>
+<th>特徴</th>
+</tr></thead><tbody>
+<tr>
+<td>計器用CT</td>
+<td>精度重視、電流計・電力計に使用</td>
+</tr>
+<tr>
+<td>保護用CT</td>
+<td>過電流耐量重視、継電器に使用</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>二次側開放厳禁</h2>
+<h3>なぜ危険か</h3>
+<p>CTの二次側を開放すると、以下の現象が起こる。</p>
+<p>二次電流がゼロになる</p>
+<p>一次電流による磁束を打ち消す電流がなくなる</p>
+<p>鉄心が飽和し、異常な高電圧が発生</p>
+<p>絶縁破壊、感電、火災の危険</p>
+<h3>対策</h3>
+<ul>
+<li>二次側には必ず負荷（計器、継電器）を接続</li>
+<li>計器を外すときは <strong>先に二次側を短絡</strong> してから外す</li>
+<li>使用しない二次巻線は短絡しておく</li>
+</ul>
+<p><strong>鉄則</strong>：CTの二次側は絶対に開放しない</p>
+<hr>
+<h2>月次点検のポイント</h2>
+<h3>チェックリスト</h3>
+<table class="md-table"><thead><tr>
+<th>No.</th>
+<th>確認項目</th>
+<th>確認内容</th>
+</tr></thead><tbody>
+<tr>
+<td>1</td>
+<td>外観</td>
+<td>損傷、変形、腐食がないか</td>
+</tr>
+<tr>
+<td>2</td>
+<td>端子</td>
+<td>緩み、変色、発熱がないか</td>
+</tr>
+<tr>
+<td>3</td>
+<td>二次配線</td>
+<td>断線、緩みがないか</td>
+</tr>
+<tr>
+<td>4</td>
+<td>接地</td>
+<td>二次側接地が確実か</td>
+</tr>
+<tr>
+<td>5</td>
+<td>電流値</td>
+<td>計器の指示が正常範囲か</td>
+</tr>
+</tbody></table>
+<h3>電流値の確認</h3>
+<p>CTを通じて電流計を見るとき、異常がないか確認する。</p>
+<table class="md-table"><thead><tr>
+<th>状態</th>
+<th>考えられる原因</th>
+</tr></thead><tbody>
+<tr>
+<td>指示がゼロ</td>
+<td>CT二次側断線、計器故障</td>
+</tr>
+<tr>
+<td>異常に高い</td>
+<td>過負荷、短絡の前兆</td>
+</tr>
+<tr>
+<td>三相不平衡</td>
+<td>欠相、負荷の不平衡</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>年次点検のポイント</h2>
+<h3>月次点検との違い</h3>
+<table class="md-table"><thead><tr>
+<th>項目</th>
+<th>月次点検</th>
+<th>年次点検</th>
+</tr></thead><tbody>
+<tr>
+<td>停電</td>
+<td>不要</td>
+<td>必要</td>
+</tr>
+<tr>
+<td>絶縁抵抗測定</td>
+<td>しない</td>
+<td>する</td>
+</tr>
+<tr>
+<td>極性確認</td>
+<td>しない</td>
+<td>する（必要時）</td>
+</tr>
+<tr>
+<td>変流比確認</td>
+<td>しない</td>
+<td>する（必要時）</td>
+</tr>
+</tbody></table>
+<h3>年次点検での確認項目</h3>
+<table class="md-table"><thead><tr>
+<th>項目</th>
+<th>内容</th>
+</tr></thead><tbody>
+<tr>
+<td>絶縁抵抗測定</td>
+<td>一次-二次間、二次-接地間</td>
+</tr>
+<tr>
+<td>外観精密点検</td>
+<td>ひび割れ、汚損の確認</td>
+</tr>
+<tr>
+<td>端子増し締め</td>
+<td>二次端子の締め付け確認</td>
+</tr>
+<tr>
+<td>接地確認</td>
+<td>二次側接地の導通確認</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>極性</h2>
+<h3>極性とは</h3>
+<p>CTには極性（方向性）がある。</p>
+<ul>
+<li><strong>K端子（一次側）</strong>：電源側</li>
+<li><strong>L端子（一次側）</strong>：負荷側</li>
+<li><strong>k端子（二次側）</strong>：K端子と同極性</li>
+<li><strong>l端子（二次側）</strong>：L端子と同極性</li>
+</ul>
+<h3>極性の重要性</h3>
+<p>継電器や電力計に接続するとき、極性を間違えると：</p>
+<ul>
+<li>電力計が逆振れする</li>
+<li>継電器が誤動作する</li>
+<li>保護協調が崩れる</li>
+</ul>
+<hr>
+<h2>関連機器との組み合わせ</h2>
+<table class="md-table"><thead><tr>
+<th>組み合わせ</th>
+<th>用途</th>
+</tr></thead><tbody>
+<tr>
+<td>CT + 電流計</td>
+<td>電流測定</td>
+</tr>
+<tr>
+<td>CT + <a href="../relay/ocr.html" class="auto-link">OCR</a></td>
+<td>過電流保護</td>
+</tr>
+<tr>
+<td>CT + 電力計</td>
+<td>電力測定（VTと併用）</td>
+</tr>
+<tr>
+<td>CT + 電力量計</td>
+<td>電力量計量（VTと併用）</td>
+</tr>
+</tbody></table>
+<hr>
+<h2><a href="../relay/gr.html" class="auto-link">ZCT</a>との違い</h2>
+<table class="md-table"><thead><tr>
+<th>項目</th>
+<th>CT</th>
+<th>ZCT</th>
+</tr></thead><tbody>
+<tr>
+<td>測定対象</td>
+<td>各相の電流</td>
+<td>零相電流（三相一括）</td>
+</tr>
+<tr>
+<td>用途</td>
+<td>電流測定、過電流保護</td>
+<td>地絡検出</td>
+</tr>
+<tr>
+<td>接続方式</td>
+<td>各相に個別設置</td>
+<td>三相一括貫通</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>関連法令</h2>
+<table class="md-table"><thead><tr>
+<th>法令</th>
+<th>条文</th>
+<th>内容</th>
+</tr></thead><tbody>
+<tr>
+<td><a href="../standards/index.html" class="auto-link">電技</a>解釈</td>
+<td>第28条</td>
+<td>計器用変成器の施設</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>関連ページ</h2>
+<ul>
+<li><a href="vt.html">VT（計器用変圧器）</a></li>
+<li><a href="zct.html">ZCT（零相変流器）</a></li>
+<li><a href="../relay/ocr.html">OCR（過電流継電器）</a></li>
+<li><a href="vct.html">VCT（計器用変成器）</a></li>
+</ul>
+<hr>
+<h2>更新履歴</h2>
+<table class="md-table"><thead><tr>
+<th>日付</th>
+<th>内容</th>
+</tr></thead><tbody>
+<tr>
+<td>2026-01-15</td>
+<td>初版作成</td>
+</tr>
+</tbody></table>
+</article>
+    </main>
+</body>
+
+</html>

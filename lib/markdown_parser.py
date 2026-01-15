@@ -110,8 +110,75 @@ class MarkdownParser:
         lines = text.split("\n")
         html_lines = []
         in_list = False
+        in_code_block = False
+        in_table = False
+        code_lines = []
+        table_rows = []
         
         for line in lines:
+            # コードブロックの処理
+            if line.strip().startswith("```"):
+                if in_code_block:
+                    # コードブロック終了
+                    code_content = "\n".join(code_lines)
+                    html_lines.append(f'<pre><code>{code_content}</code></pre>')
+                    code_lines = []
+                    in_code_block = False
+                else:
+                    # コードブロック開始
+                    in_code_block = True
+                continue
+            
+            if in_code_block:
+                code_lines.append(line)
+                continue
+            
+            # 水平線の処理
+            if line.strip() == "---" or line.strip() == "***" or line.strip() == "___":
+                if in_list:
+                    html_lines.append("</ul>")
+                    in_list = False
+                if in_table:
+                    html_lines.append("</tbody></table>")
+                    table_rows = []
+                    in_table = False
+                html_lines.append("<hr>")
+                continue
+            
+            # テーブルの処理
+            if line.strip().startswith("|") and line.strip().endswith("|"):
+                # テーブル区切り行（|---|---|）はスキップ
+                # 内容が - : スペースのみで構成されているかチェック
+                inner_content = line.strip()[1:-1]  # 両端の|を除去
+                if all(c in '-: |' for c in inner_content) and '-' in inner_content:
+                    continue
+                
+                # テーブル行を解析
+                cells = [cell.strip() for cell in line.strip().split("|")[1:-1]]
+                
+                if not in_table:
+                    # テーブルヘッダー開始
+                    html_lines.append('<table class="md-table"><thead><tr>')
+                    for cell in cells:
+                        cell = self._inline_format(cell)
+                        html_lines.append(f"<th>{cell}</th>")
+                    html_lines.append("</tr></thead><tbody>")
+                    in_table = True
+                else:
+                    # テーブル本体
+                    html_lines.append("<tr>")
+                    for cell in cells:
+                        cell = self._inline_format(cell)
+                        html_lines.append(f"<td>{cell}</td>")
+                    html_lines.append("</tr>")
+                continue
+            else:
+                # テーブル終了
+                if in_table:
+                    html_lines.append("</tbody></table>")
+                    table_rows = []
+                    in_table = False
+            
             # 見出し
             if line.startswith("### "):
                 html_lines.append(f"<h3>{line[4:]}</h3>")
@@ -124,22 +191,37 @@ class MarkdownParser:
                 if not in_list:
                     html_lines.append("<ul>")
                     in_list = True
-                html_lines.append(f"<li>{line[2:]}</li>")
+                # リスト内のリンク処理
+                list_content = line[2:]
+                list_content = self._inline_format(list_content)
+                html_lines.append(f"<li>{list_content}</li>")
+            # 番号付きリスト
+            elif re.match(r'^\d+\. ', line):
+                content = re.sub(r'^\d+\. ', '', line)
+                content = self._inline_format(content)
+                html_lines.append(f"<p>{content}</p>")
             else:
                 if in_list:
                     html_lines.append("</ul>")
                     in_list = False
                 
                 if line.strip():
-                    # 太字
-                    line = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', line)
-                    # 斜体
-                    line = re.sub(r'\*(.+?)\*', r'<em>\1</em>', line)
-                    # リンク
-                    line = re.sub(r'\[(.+?)\]\((.+?)\)', r'<a href="\2">\1</a>', line)
+                    line = self._inline_format(line)
                     html_lines.append(f"<p>{line}</p>")
         
         if in_list:
             html_lines.append("</ul>")
+        if in_table:
+            html_lines.append("</tbody></table>")
         
         return "\n".join(html_lines)
+    
+    def _inline_format(self, text):
+        """インライン要素を変換"""
+        # 太字
+        text = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', text)
+        # 斜体
+        text = re.sub(r'\*(.+?)\*', r'<em>\1</em>', text)
+        # リンク
+        text = re.sub(r'\[(.+?)\]\((.+?)\)', r'<a href="\2">\1</a>', text)
+        return text

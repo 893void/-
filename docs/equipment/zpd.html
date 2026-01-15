@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>ZPD（零相電圧検出器） - ほあんペディア</title>
+    <meta name="description" content="零相電圧検出器の基礎知識と点検ポイント">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <!-- 共通ヘッダー -->
+    <header class="site-header">
+        <a href="../index.html">
+            <span class="home-icon">🏠</span>
+            <span>ほあんペディア</span>
+        </a>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="main-content">
+        
+        <h1 class="page-title">ZPD（零相電圧検出器）</h1>
+
+<article class="article-content">
+    <h1>ZPD（零相電圧検出器）</h1>
+<h2>概要</h2>
+<p><strong>ZPD（Zero-phase Potential Device）</strong> は、零相電圧（V₀）を検出する機器。</p>
+<p><a href="../relay/dgr.html" class="auto-link">DGR</a>（<a href="../relay/dgr.html" class="auto-link">方向性地絡継電器</a>）や<a href="../relay/ovgr.html" class="auto-link">OVGR</a>（<a href="../relay/ovgr.html" class="auto-link">地絡過電圧継電器</a>）と組み合わせて使用する。</p>
+<hr>
+<h2>基礎知識</h2>
+<h3>零相電圧とは</h3>
+<p>正常な三相回路では、三相の電圧のベクトル和はゼロになる。</p>
+<pre><code>Va + Vb + Vc = 0（正常時）</code></pre>
+<p>地絡が発生すると、地絡相の対地電圧が低下し、健全相の対地電圧が上昇する。この不平衡により零相電圧が発生する。</p>
+<pre><code>Va + Vb + Vc = 3V₀（地絡時）</code></pre>
+<h3>なぜ零相電圧が必要か</h3>
+<p><strong>地絡方向の判別</strong></p>
+<p><a href="../relay/gr.html" class="auto-link">ZCT</a>の零相電流だけでは、地絡が「自分の構内」なのか「配電線側」なのか判別できない。</p>
+<p>ZCTの零相電流（I₀）とZPDの零相電圧（V₀）の位相関係を見ることで、地絡の方向を判別できる。</p>
+<hr>
+<h2>動作原理</h2>
+<h3>コンデンサ分圧方式</h3>
+<p>ZPDは三相のコンデンサを利用して零相電圧を検出する。</p>
+<p>各相にコンデンサを接続（対地間）</p>
+<p>三相のコンデンサの中性点に零相電圧が現れる</p>
+<p>この電圧を継電器に入力</p>
+<h3>検出回路</h3>
+<pre><code>R相 ──[C]──┐
+S相 ──[C]──┼── V₀（零相電圧）
+T相 ──[C]──┘</code></pre>
+<p>正常時：三相平衡のため V₀ ≒ 0  </p>
+<p>地絡時：不平衡により V₀ が発生</p>
+<hr>
+<h2>種類</h2>
+<h3>構造による分類</h3>
+<table class="md-table"><thead><tr>
+<th>種類</th>
+<th>特徴</th>
+</tr></thead><tbody>
+<tr>
+<td>ZPD</td>
+<td>コンデンサ分圧式、小型</td>
+</tr>
+<tr>
+<td>GPT（EVT）</td>
+<td>接地形計器用変圧器、高精度</td>
+</tr>
+</tbody></table>
+<h3>ZPDとGPTの違い</h3>
+<table class="md-table"><thead><tr>
+<th>項目</th>
+<th>ZPD</th>
+<th>GPT（EVT）</th>
+</tr></thead><tbody>
+<tr>
+<td>構造</td>
+<td>コンデンサ分圧</td>
+<td>変圧器式</td>
+</tr>
+<tr>
+<td>精度</td>
+<td>やや低い</td>
+<td>高い</td>
+</tr>
+<tr>
+<td>サイズ</td>
+<td>小型</td>
+<td>大型</td>
+</tr>
+<tr>
+<td>コスト</td>
+<td>安い</td>
+<td>高い</td>
+</tr>
+<tr>
+<td>用途</td>
+<td>一般的な需要家</td>
+<td>高精度が必要な場合</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>月次点検のポイント</h2>
+<h3>チェックリスト</h3>
+<table class="md-table"><thead><tr>
+<th>No.</th>
+<th>確認項目</th>
+<th>確認内容</th>
+</tr></thead><tbody>
+<tr>
+<td>1</td>
+<td>外観</td>
+<td>損傷、変形、腐食がないか</td>
+</tr>
+<tr>
+<td>2</td>
+<td>端子</td>
+<td>緩み、変色がないか</td>
+</tr>
+<tr>
+<td>3</td>
+<td>配線</td>
+<td>断線、緩みがないか</td>
+</tr>
+<tr>
+<td>4</td>
+<td>接地</td>
+<td>接地線が確実に接続されているか</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>年次点検のポイント</h2>
+<h3>月次点検との違い</h3>
+<table class="md-table"><thead><tr>
+<th>項目</th>
+<th>月次点検</th>
+<th>年次点検</th>
+</tr></thead><tbody>
+<tr>
+<td>停電</td>
+<td>不要</td>
+<td>必要</td>
+</tr>
+<tr>
+<td>絶縁抵抗測定</td>
+<td>しない</td>
+<td>する</td>
+</tr>
+<tr>
+<td>D<a href="../relay/gr.html" class="auto-link">GR</a>/OVGR試験</td>
+<td>しない</td>
+<td>する</td>
+</tr>
+</tbody></table>
+<h3>年次点検での確認項目</h3>
+<table class="md-table"><thead><tr>
+<th>項目</th>
+<th>内容</th>
+</tr></thead><tbody>
+<tr>
+<td>絶縁抵抗測定</td>
+<td>各相の絶縁抵抗</td>
+</tr>
+<tr>
+<td>DGR試験</td>
+<td>継電器との連動確認</td>
+</tr>
+<tr>
+<td>OVGR試験</td>
+<td>継電器との連動確認</td>
+</tr>
+<tr>
+<td>配線確認</td>
+<td>極性、接続状態</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>継電器との組み合わせ</h2>
+<table class="md-table"><thead><tr>
+<th>組み合わせ</th>
+<th>保護内容</th>
+</tr></thead><tbody>
+<tr>
+<td>ZCT + ZPD + DGR</td>
+<td>方向性地絡保護</td>
+</tr>
+<tr>
+<td>ZPD + OVGR</td>
+<td>地絡過電圧保護</td>
+</tr>
+</tbody></table>
+<h3>DGR（方向性<a href="../relay/gr.html" class="auto-link">地絡継電器</a>）との接続</h3>
+<ul>
+<li>ZCT：零相電流（I₀）を検出</li>
+<li>ZPD：零相電圧（V₀）を検出</li>
+<li>DGR：I₀とV₀の位相関係から地絡方向を判別</li>
+</ul>
+<h3>OVGR（地絡過電圧継電器）との接続</h3>
+<ul>
+<li>ZPD：零相電圧（V₀）を検出</li>
+<li>OVGR：V₀が設定値を超えると動作</li>
+</ul>
+<p>OVGRは主にPAS（SOG付）と組み合わせて使用する。</p>
+<hr>
+<h2>設置上の注意</h2>
+<h3>接続相の確認</h3>
+<p>ZPDは三相全てに接続する必要がある。一相でも接続が外れると正常に動作しない。</p>
+<h3>接地の確認</h3>
+<p>ZPDの接地端子は確実に接地すること。接地が不完全だと誤動作の原因になる。</p>
+<hr>
+<h2>トラブル事例</h2>
+<h3>誤動作の原因</h3>
+<table class="md-table"><thead><tr>
+<th>原因</th>
+<th>対策</th>
+</tr></thead><tbody>
+<tr>
+<td>接地不良</td>
+<td>接地状態を確認</td>
+</tr>
+<tr>
+<td>配線誤り</td>
+<td>配線を確認</td>
+</tr>
+<tr>
+<td>ZPD故障</td>
+<td>試験で確認</td>
+</tr>
+</tbody></table>
+<h3>不動作の原因</h3>
+<table class="md-table"><thead><tr>
+<th>原因</th>
+<th>対策</th>
+</tr></thead><tbody>
+<tr>
+<td>接続外れ</td>
+<td>接続状態を確認</td>
+</tr>
+<tr>
+<td>ZPD故障</td>
+<td>試験で確認</td>
+</tr>
+<tr>
+<td>継電器故障</td>
+<td>継電器試験で確認</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>関連法令</h2>
+<table class="md-table"><thead><tr>
+<th>法令</th>
+<th>条文</th>
+<th>内容</th>
+</tr></thead><tbody>
+<tr>
+<td><a href="../standards/index.html" class="auto-link">電技</a>解釈</td>
+<td>第36条</td>
+<td>地絡遮断装置の施設</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>関連ページ</h2>
+<ul>
+<li><a href="zct.html">ZCT（零相変流器）</a></li>
+<li><a href="../relay/dgr.html">DGR（方向性地絡継電器）</a></li>
+<li><a href="../relay/ovgr.html">OVGR（地絡過電圧継電器）</a></li>
+<li><a href="pas.html">PAS（高圧気中開閉器）</a></li>
+</ul>
+<hr>
+<h2>更新履歴</h2>
+<table class="md-table"><thead><tr>
+<th>日付</th>
+<th>内容</th>
+</tr></thead><tbody>
+<tr>
+<td>2026-01-15</td>
+<td>初版作成</td>
+</tr>
+</tbody></table>
+</article>
+    </main>
+</body>
+
+</html>

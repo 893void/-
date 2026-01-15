@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>equipment-deployment-guide - ほあんペディア</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <!-- 共通ヘッダー -->
+    <header class="site-header">
+        <a href="../index.html">
+            <span class="home-icon">🏠</span>
+            <span>ほあんペディア</span>
+        </a>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="main-content">
+        
+        <h1 class="page-title">equipment-deployment-guide</h1>
+
+<article class="article-content">
+    <h1>ほあんペディア 機器ページ配置指示書</h1>
+<p>対象：antigravity  </p>
+<p>作成日：2026年1月15日</p>
+<hr>
+<h2>概要</h2>
+<p>Claude Opusが作成した機器ページのMarkdownファイルを、プロジェクトに配置してください。</p>
+<hr>
+<h2>配置先</h2>
+<p>すべてのファイルを以下のディレクトリに配置：</p>
+<pre><code>hoan-pedia/content/equipment/</code></pre>
+<hr>
+<h2>配置するファイル一覧</h2>
+<table class="md-table"><thead><tr>
+<th>ファイル名</th>
+<th>内容</th>
+<th>配置先</th>
+</tr></thead><tbody>
+<tr>
+<td>`_index.md`</td>
+<td>機器ページ目次（更新版）</td>
+<td>`content/equipment/_index.md`</td>
+</tr>
+<tr>
+<td>`transformer.md`</td>
+<td>変圧器</td>
+<td>`content/equipment/transformer.md`</td>
+</tr>
+<tr>
+<td>`vcb.md`</td>
+<td>VCB（真空遮断器）</td>
+<td>`content/equipment/vcb.md`</td>
+</tr>
+<tr>
+<td>`pas.md`</td>
+<td>PAS（高圧気中開閉器）</td>
+<td>`content/equipment/pas.md`</td>
+</tr>
+<tr>
+<td>`lbs.md`</td>
+<td>LBS（高圧負荷開閉器）</td>
+<td>`content/equipment/lbs.md`</td>
+</tr>
+<tr>
+<td>`ds.md`</td>
+<td>DS（断路器）</td>
+<td>`content/equipment/ds.md`</td>
+</tr>
+<tr>
+<td>`ct.md`</td>
+<td>CT（変流器）</td>
+<td>`content/equipment/ct.md`</td>
+</tr>
+<tr>
+<td>`vt.md`</td>
+<td>VT（計器用変圧器）</td>
+<td>`content/equipment/vt.md`</td>
+</tr>
+<tr>
+<td>`zct.md`</td>
+<td><a href="../relay/gr.html" class="auto-link">ZCT</a>（<a href="../relay/gr.html" class="auto-link">零相変流器</a>）</td>
+<td>`content/equipment/zct.md`</td>
+</tr>
+<tr>
+<td>`zpd.md`</td>
+<td>ZPD（零相電圧検出器）</td>
+<td>`content/equipment/zpd.md`</td>
+</tr>
+<tr>
+<td>`la.md`</td>
+<td>LA（避雷器）</td>
+<td>`content/equipment/la.md`</td>
+</tr>
+<tr>
+<td>`sc.md`</td>
+<td>SC（進相コンデンサ）</td>
+<td>`content/equipment/sc.md`</td>
+</tr>
+<tr>
+<td>`vct.md`</td>
+<td>VCT（計器用変成器）</td>
+<td>`content/equipment/vct.md`</td>
+</tr>
+</tbody></table>
+<p>合計：13ファイル</p>
+<hr>
+<h2>配置後の作業</h2>
+<p>`python build.py` を実行してHTMLを生成</p>
+<p>ブラウザで動作確認</p>
+<p>各ページのリンクが正常に動作するか確認</p>
+<hr>
+<h2>確認ポイント</h2>
+<ul>
+<li>[ ] `equipment/` 配下に13ファイルが配置されているか</li>
+<li>[ ] `build.py` が正常に完了するか</li>
+<li>[ ] 機器一覧ページ（`equipment/index.html`）が表示されるか</li>
+<li>[ ] 各機器ページが表示されるか</li>
+<li>[ ] ページ間のリンクが正常に動作するか</li>
+<li>[ ] <a href="../relay/basic.html" class="auto-link">保護継電器</a>ページ（`relay/`）へのリンクが動作するか</li>
+</ul>
+<hr>
+<h2>注意事項</h2>
+<ul>
+<li>`_index.md` は既存ファイルを <strong>上書き</strong> する（更新版）</li>
+<li>その他のファイルは <strong>新規追加</strong></li>
+<li>build.py が equipment/ フォルダを処理できることを確認</li>
+</ul>
+<hr>
+<h2>フォルダ構成（配置後）</h2>
+<pre><code>hoan-pedia/
+└── content/
+    ├── relay/              # 保護継電器（既存）
+    ├── equipment/          # 機器ページ ← ここに配置
+    │   ├── _index.md       # 目次
+    │   ├── transformer.md  # 変圧器
+    │   ├── vcb.md          # VCB
+    │   ├── pas.md          # PAS
+    │   ├── lbs.md          # LBS
+    │   ├── ds.md           # DS
+    │   ├── ct.md           # CT
+    │   ├── vt.md           # VT
+    │   ├── zct.md          # ZCT
+    │   ├── zpd.md          # ZPD
+    │   ├── la.md           # LA
+    │   ├── sc.md           # SC
+    │   └── vct.md          # VCT
+    ├── sld/                # 単線結線図（既に配置済み）
+    ├── guide/              # 学習ガイド（既に配置済み）
+    └── standards/          # 法令（既存）</code></pre>
+<hr>
+<p><strong>配置指示書 終了</strong></p>
+</article>
+    </main>
+</body>
+
+</html>

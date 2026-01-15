@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>LBS（高圧負荷開閉器） - ほあんペディア</title>
+    <meta name="description" content="高圧負荷開閉器の基礎知識と点検ポイント">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <!-- 共通ヘッダー -->
+    <header class="site-header">
+        <a href="../index.html">
+            <span class="home-icon">🏠</span>
+            <span>ほあんペディア</span>
+        </a>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="main-content">
+        
+        <h1 class="page-title">LBS（高圧負荷開閉器）</h1>
+
+<article class="article-content">
+    <h1>LBS（高圧負荷開閉器）</h1>
+<h2>概要</h2>
+<p><strong>LBS（Load Break Switch）</strong> は、負荷電流を開閉できる高圧開閉器。</p>
+<p>変圧器やコンデンサの一次側に設置され、<strong>PF（高圧限流ヒューズ）</strong> と組み合わせて保護する。</p>
+<p>短絡電流は遮断できない。</p>
+<hr>
+<h2>基礎知識</h2>
+<h3>役割</h3>
+<p><strong>負荷の開閉</strong>：変圧器やコンデンサの入切</p>
+<p><strong>回路の区分</strong>：点検時の電路切り離し</p>
+<p><strong>PFと組み合わせて保護</strong>：短絡保護はPFが担当</p>
+<h3>構造</h3>
+<table class="md-table"><thead><tr>
+<th>部位</th>
+<th>説明</th>
+</tr></thead><tbody>
+<tr>
+<td>開閉部</td>
+<td>負荷電流を開閉する接点</td>
+</tr>
+<tr>
+<td>消弧室</td>
+<td>アークを消弧する機構</td>
+</tr>
+<tr>
+<td>ヒューズホルダ</td>
+<td>PFを取り付ける部分</td>
+</tr>
+<tr>
+<td>操作ハンドル</td>
+<td>手動開閉用</td>
+</tr>
+<tr>
+<td>ストライカ</td>
+<td>PF溶断時にLBSを開放する機構</td>
+</tr>
+</tbody></table>
+<h3>なぜLBS + PFの組み合わせか</h3>
+<table class="md-table"><thead><tr>
+<th>電流の種類</th>
+<th>担当</th>
+</tr></thead><tbody>
+<tr>
+<td>負荷電流</td>
+<td>LBSで開閉</td>
+</tr>
+<tr>
+<td>短絡電流</td>
+<td>PFで遮断</td>
+</tr>
+</tbody></table>
+<p>VCBより安価で、小規模な分岐回路に適している。</p>
+<hr>
+<h2>種類</h2>
+<h3>構造による分類</h3>
+<table class="md-table"><thead><tr>
+<th>種類</th>
+<th>特徴</th>
+</tr></thead><tbody>
+<tr>
+<td>限流ヒューズ付LBS</td>
+<td>PF内蔵、一般的</td>
+</tr>
+<tr>
+<td>ヒューズなしLBS</td>
+<td>別途保護装置が必要</td>
+</tr>
+</tbody></table>
+<h3>用途による分類</h3>
+<table class="md-table"><thead><tr>
+<th>用途</th>
+<th>説明</th>
+</tr></thead><tbody>
+<tr>
+<td>変圧器用</td>
+<td>TRの一次側保護</td>
+</tr>
+<tr>
+<td>コンデンサ用</td>
+<td>SCの開閉・保護</td>
+</tr>
+<tr>
+<td>フィーダ用</td>
+<td>配電回路の区分</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>PF（高圧限流ヒューズ）</h2>
+<h3>PFとは</h3>
+<p><strong>PF（Power Fuse）</strong> は、短絡電流を限流して遮断するヒューズ。</p>
+<p>LBSと組み合わせて使用する。</p>
+<h3>特徴</h3>
+<table class="md-table"><thead><tr>
+<th>項目</th>
+<th>内容</th>
+</tr></thead><tbody>
+<tr>
+<td>限流効果</td>
+<td>短絡電流のピーク値を抑制</td>
+</tr>
+<tr>
+<td>遮断速度</td>
+<td>極めて高速（数ミリ秒）</td>
+</tr>
+<tr>
+<td>再使用</td>
+<td>不可（溶断後は交換）</td>
+</tr>
+</tbody></table>
+<h3>ストライカ方式</h3>
+<p>PFが溶断すると、内蔵のストライカ（突き出しピン）が飛び出し、LBSを自動的に開放する。</p>
+<p><strong>目的</strong></p>
+<ul>
+<li>三相のうち1相だけPFが溶断すると欠相状態になる</li>
+<li>欠相は機器を損傷させるため、全相を開放する必要がある</li>
+</ul>
+<hr>
+<h2>月次点検のポイント</h2>
+<h3>チェックリスト</h3>
+<table class="md-table"><thead><tr>
+<th>No.</th>
+<th>確認項目</th>
+<th>確認内容</th>
+</tr></thead><tbody>
+<tr>
+<td>1</td>
+<td>開閉表示</td>
+<td>表示が実際の状態と一致しているか</td>
+</tr>
+<tr>
+<td>2</td>
+<td>外観</td>
+<td>損傷、変形、腐食がないか</td>
+</tr>
+<tr>
+<td>3</td>
+<td>PF外観</td>
+<td>変色、膨らみがないか</td>
+</tr>
+<tr>
+<td>4</td>
+<td>異音</td>
+<td>異常な音がしていないか</td>
+</tr>
+<tr>
+<td>5</td>
+<td>異臭</td>
+<td>焦げ臭がしていないか</td>
+</tr>
+<tr>
+<td>6</td>
+<td>ストライカ</td>
+<td>飛び出していないか</td>
+</tr>
+</tbody></table>
+<h3>PFの外観確認</h3>
+<table class="md-table"><thead><tr>
+<th>状態</th>
+<th>考えられる原因</th>
+</tr></thead><tbody>
+<tr>
+<td>変色</td>
+<td>過負荷による発熱</td>
+</tr>
+<tr>
+<td>膨らみ</td>
+<td>内部でアーク発生の可能性</td>
+</tr>
+<tr>
+<td>ストライカ飛び出し</td>
+<td>PF溶断済み</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>年次点検のポイント</h2>
+<h3>月次点検との違い</h3>
+<table class="md-table"><thead><tr>
+<th>項目</th>
+<th>月次点検</th>
+<th>年次点検</th>
+</tr></thead><tbody>
+<tr>
+<td>停電</td>
+<td>不要</td>
+<td>必要</td>
+</tr>
+<tr>
+<td>絶縁抵抗測定</td>
+<td>しない</td>
+<td>する</td>
+</tr>
+<tr>
+<td>手動開閉試験</td>
+<td>しない</td>
+<td>する</td>
+</tr>
+<tr>
+<td>PF確認</td>
+<td>外観のみ</td>
+<td>詳細確認</td>
+</tr>
+</tbody></table>
+<h3>年次点検での確認項目</h3>
+<table class="md-table"><thead><tr>
+<th>項目</th>
+<th>内容</th>
+</tr></thead><tbody>
+<tr>
+<td>絶縁抵抗測定</td>
+<td>主回路の絶縁抵抗</td>
+</tr>
+<tr>
+<td>手動開閉試験</td>
+<td>スムーズに開閉できるか</td>
+</tr>
+<tr>
+<td>PF確認</td>
+<td>定格、製造年、外観</td>
+</tr>
+<tr>
+<td>清掃</td>
+<td>碍子、外箱の清掃</td>
+</tr>
+<tr>
+<td>増し締め</td>
+<td>端子部の締め付け確認</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>VCBとの使い分け</h2>
+<table class="md-table"><thead><tr>
+<th>項目</th>
+<th>LBS + PF</th>
+<th>VCB</th>
+</tr></thead><tbody>
+<tr>
+<td>遮断能力</td>
+<td>負荷電流のみ（短絡はPF）</td>
+<td>短絡電流も遮断可能</td>
+</tr>
+<tr>
+<td>価格</td>
+<td>安い</td>
+<td>高い</td>
+</tr>
+<tr>
+<td>保護方式</td>
+<td>PFで短絡保護</td>
+<td>継電器と組み合わせ</td>
+</tr>
+<tr>
+<td>再閉路</td>
+<td>PF交換が必要</td>
+<td>再投入可能</td>
+</tr>
+<tr>
+<td>用途</td>
+<td>分岐回路、小規模設備</td>
+<td>主遮断装置</td>
+</tr>
+</tbody></table>
+<h3>選定の目安</h3>
+<ul>
+<li><strong>主遮断装置</strong> → VCB</li>
+<li><strong>変圧器・コンデンサの一次側</strong> → LBS + PF</li>
+<li><strong>コスト重視の小規模設備</strong> → LBS + PF</li>
+</ul>
+<hr>
+<h2>操作上の注意</h2>
+<h3>開閉順序</h3>
+<p><strong>投入時</strong></p>
+<p>LBSを投入</p>
+<p>二次側の開閉器を投入</p>
+<p><strong>開放時</strong></p>
+<p>二次側の開閉器を開放</p>
+<p>LBSを開放</p>
+<p><strong>重要</strong>：LBSは負荷電流しか遮断できないため、大電流を遮断しようとすると接点が損傷する</p>
+<hr>
+<h2>関連法令</h2>
+<table class="md-table"><thead><tr>
+<th>法令</th>
+<th>条文</th>
+<th>内容</th>
+</tr></thead><tbody>
+<tr>
+<td><a href="../standards/index.html" class="auto-link">電技</a>解釈</td>
+<td>第38条</td>
+<td>高圧又は特別高圧の電路の遮断器の施設</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>関連ページ</h2>
+<ul>
+<li><a href="vcb.html">VCB（真空遮断器）</a></li>
+<li><a href="pas.html">PAS（高圧気中開閉器）</a></li>
+<li><a href="ds.html">DS（断路器）</a></li>
+<li><a href="transformer.html">変圧器</a></li>
+</ul>
+<hr>
+<h2>更新履歴</h2>
+<table class="md-table"><thead><tr>
+<th>日付</th>
+<th>内容</th>
+</tr></thead><tbody>
+<tr>
+<td>2026-01-15</td>
+<td>初版作成</td>
+</tr>
+</tbody></table>
+</article>
+    </main>
+</body>
+
+</html>
